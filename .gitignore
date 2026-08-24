@@ -1,0 +1,10 @@
+.DS_Store
+Thumbs.db
+.env
+.env.*
+node_modules/
+dist/
+*.log
+
+# Design references are kept locally during development and are not shipped.
+reference/mockups/

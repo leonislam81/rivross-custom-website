@@ -1,0 +1,1575 @@
+# RIVROSS Final WordPress + Elementor Development Blueprint
+
+## 1. Final Website Direction
+
+RIVROSS website হবে **WordPress + Elementor based corporate multi-business website**।
+
+কিন্তু তিনটি business-এর structure একরকম হবে না:
+
+- **Real Estate** → full dynamic section with multiple pages
+- **Travel & Tourism** → single standalone landing page
+- **Tea Business** → single standalone landing page
+- **Corporate pages** → standard Elementor pages
+- **Projects / Properties / News / Leadership** → dynamic content যেখানে দরকার
+
+---
+
+# 2. Final Technology Stack
+
+## Theme
+
+**Hello Elementor**
+
+কারণ:
+- Lightweight
+- Elementor friendly
+- Unnecessary theme styling নেই
+- Full design control পাওয়া যায়
+
+## Page Builder
+
+**Elementor Pro**
+
+আমাদের দরকার হবে:
+
+- Theme Builder
+- Header/Footer
+- Dynamic templates
+- Loop Grid
+- Forms
+- Popup
+- Custom CSS
+- Archive templates
+- Single post templates
+
+## Main Plugins
+
+### Required
+
+1. Elementor Pro
+2. Advanced Custom Fields
+3. Custom Post Type UI
+4. Rank Math SEO
+5. WP Mail SMTP
+
+### Recommended
+
+6. Fluent Forms — complex inquiry form প্রয়োজন হলে  
+7. LiteSpeed Cache — server LiteSpeed হলে  
+8. UpdraftPlus — backups  
+9. Wordfence — security প্রয়োজন অনুযায়ী  
+10. ShortPixel / Imagify / similar image optimizer
+
+### এখন দরকার নেই
+
+- WooCommerce
+- JetEngine
+- Multiple Elementor addon packs
+- Booking engine
+- Hotel booking API
+- Flight booking API
+- Tea eCommerce system
+
+---
+
+# 3. Final Sitemap
+
+```text
+HOME
+
+ABOUT US
+
+OUR COMPANIES
+
+REAL ESTATE
+│
+├── Real Estate Landing Page
+├── Properties
+│   └── Single Property
+├── Projects
+│   └── Single Project
+├── Investment Opportunities
+└── Property Inquiry
+
+TRAVEL & TOURISM
+└── Single Landing Page
+
+TEA BUSINESS
+└── Single Landing Page
+
+SERVICES
+
+MANAGEMENT
+└── Leadership Profile
+
+NEWS & MEDIA
+├── News
+├── Events
+└── Gallery
+
+CAREERS
+
+BUSINESS INQUIRY
+
+CONTACT US
+
+FAQ
+
+CORPORATE PROFILE
+
+LEGAL
+├── Privacy Policy
+└── Terms & Conditions
+
+404 PAGE
+
+SEARCH RESULTS
+```
+
+---
+
+# 4. Header Structure
+
+Desktop main navigation:
+
+```text
+Logo
+
+Home
+About Us
+Our Companies
+Real Estate
+Services
+Projects
+Management
+News & Media
+Contact Us
+
+[ INQUIRY ]
+```
+
+## Our Companies Dropdown
+
+```text
+Real Estate
+Travel & Tourism
+Tea Business
+```
+
+Travel এবং Tea-এর আলাদা complex dropdown লাগবে না।
+
+## Mobile
+
+Hamburger menu ব্যবহার করব।
+
+Sticky header রাখা যেতে পারে।
+
+---
+
+# 5. Footer Structure
+
+### Column 1
+
+RIVROSS Logo  
+Short company description  
+Social Media
+
+### Column 2 — Quick Links
+
+Home  
+About  
+Our Companies  
+Services  
+Projects  
+Management  
+News & Media  
+Contact
+
+### Column 3 — Businesses
+
+Real Estate  
+Travel & Tourism  
+Tea Business
+
+### Column 4 — Contact
+
+Address  
+Phone  
+Email  
+Business Hours
+
+### Column 5 — Legal
+
+Terms & Conditions  
+Privacy Policy
+
+Bottom:
+
+Copyright  
+Designed by / company statement
+
+---
+
+# 6. Global Design System
+
+Elementor Site Settings থেকেই শুরুতে set করতে হবে।
+
+## Corporate Main Colors
+
+### Primary Navy
+
+For:
+
+- Header
+- Footer
+- Main CTA
+- Corporate sections
+
+### Gold
+
+For:
+
+- Buttons
+- Icons
+- Lines
+- Highlights
+- Active menu
+
+### White / Off White
+
+Main page backgrounds।
+
+### Tea Business Green
+
+Tea landing page-এর dedicated accent color।
+
+Important:
+
+**Tea page green হলেও global header/footer পুরো website-এর branding-এর সাথে consistent রাখব।**
+
+---
+
+# 7. Global Typography
+
+Maximum দুইটা font family।
+
+### Heading
+
+Elegant corporate serif.
+
+Used for:
+
+- H1
+- H2
+- Important titles
+
+### Body
+
+Clean sans-serif.
+
+Used for:
+
+- Paragraph
+- Menu
+- Button
+- Form
+- Metadata
+
+Elementor Global Fonts ব্যবহার করতে হবে।
+
+---
+
+# 8. Global Layout Rules
+
+Desktop content width:
+
+**1200–1280px**
+
+General section spacing:
+
+Desktop:
+
+**80–100px top/bottom**
+
+Tablet:
+
+**60–70px**
+
+Mobile:
+
+**40–50px**
+
+Buttons সব page-এ consistent থাকবে।
+
+Example:
+
+### Primary
+
+Gold background + dark text
+
+### Secondary
+
+Dark/navy background
+
+### Outline
+
+Transparent + gold/navy border
+
+---
+
+# 9. Reusable Elementor Components
+
+একবার বানিয়ে reuse করব:
+
+- Global Header
+- Global Footer
+- Hero Section
+- Breadcrumb
+- Section Title
+- CTA Banner
+- Icon Feature Card
+- Property Card
+- Project Card
+- Leadership Card
+- News Card
+- Contact Card
+- Inquiry Form
+- Button styles
+- Partner logo cards
+
+---
+
+# 10. HOME PAGE
+
+## Build Order
+
+### 01 Hero
+
+Corporate intro
+
+Buttons:
+
+- Explore Our Businesses
+- Contact Us
+
+### 02 About RIVROSS
+
+Short corporate introduction।
+
+### 03 Business Verticals
+
+3 cards:
+
+- Real Estate
+- Travel & Tourism
+- Tea Business
+
+### 04 Why RIVROSS
+
+Corporate strengths।
+
+### 05 Featured Properties
+
+Dynamic Elementor Loop Grid।
+
+### 06 Travel Preview
+
+Short service overview।
+
+Button:
+
+**Explore Travel & Tourism**
+
+### 07 Tea Preview
+
+Short overview।
+
+Button:
+
+**Explore Tea Business**
+
+### 08 Featured Projects
+
+Dynamic.
+
+### 09 Partners
+
+Approved partner logos only।
+
+### 10 News & Updates
+
+Dynamic latest posts.
+
+### 11 Leadership
+
+Selected leadership.
+
+### 12 Business CTA
+
+### 13 Contact Preview
+
+### 14 Footer
+
+---
+
+# 11. ABOUT US
+
+Static Elementor page.
+
+Sections:
+
+1. Hero
+2. Company Introduction
+3. Who We Are
+4. Vision
+5. Mission
+6. Core Values
+7. Business Philosophy
+8. Objectives
+9. Journey / Milestones
+10. Corporate Information
+11. Leadership Preview
+12. CTA
+13. Footer
+
+---
+
+# 12. OUR COMPANIES
+
+Static page.
+
+Sections:
+
+Hero
+
+Business introduction
+
+Three primary cards:
+
+### Real Estate
+
+Button:
+
+**Explore Real Estate**
+
+### Travel & Tourism
+
+Button:
+
+**Explore Travel**
+
+### Tea Business
+
+Button:
+
+**Explore Tea**
+
+Future venture block optionally রাখা যাবে।
+
+---
+
+# 13. REAL ESTATE MAIN PAGE
+
+এটা সবচেয়ে important business page।
+
+Sections:
+
+1. Hero
+2. Real Estate Overview
+3. Why RIVROSS Real Estate
+4. Property Search
+5. Featured Properties
+6. Property Types
+7. Ongoing Projects
+8. Upcoming Projects
+9. Investment Opportunities
+10. Development / Business Partners
+11. Inquiry CTA
+12. Footer
+
+---
+
+# 14. PROPERTY SYSTEM
+
+Properties manually page বানাব না।
+
+Create:
+
+### Custom Post Type
+
+`property`
+
+### Taxonomies
+
+- Property Type
+- Location
+- Status
+- Developer
+
+Example Property Types:
+
+- Apartment
+- Commercial
+- Land / Plot
+- Office
+- Mixed Use
+
+Statuses:
+
+- Available
+- Ongoing
+- Upcoming
+- Completed
+- Sold
+
+---
+
+# 15. Property ACF Fields
+
+Create:
+
+```text
+Property Name
+Location
+Developer
+Property Type
+Featured Image
+Gallery
+Short Description
+Full Description
+Size
+Bedrooms
+Bathrooms
+Parking
+Floor
+Price
+Price Unit
+Status
+Handover Date
+Amenities
+Floor Plan
+Brochure
+Google Map
+Featured Property
+```
+
+---
+
+# 16. Property Archive
+
+URL:
+
+```text
+/properties/
+```
+
+Elementor Archive template.
+
+Layout:
+
+Search/filter
+
+Property cards
+
+Pagination
+
+Inquiry CTA
+
+---
+
+# 17. Single Property Template
+
+Elementor Theme Builder.
+
+Automatically apply to every Property.
+
+Sections:
+
+Gallery  
+Property Name  
+Location  
+Price  
+Quick Info  
+Overview  
+Features  
+Amenities  
+Floor Plan  
+Map  
+Developer  
+Brochure  
+Related Properties  
+Property Inquiry
+
+---
+
+# 18. PROJECT SYSTEM
+
+Create CPT:
+
+```text
+project
+```
+
+Taxonomies:
+
+```text
+Project Status
+Project Type
+Business Division
+Location
+```
+
+Status:
+
+- Ongoing
+- Upcoming
+- Completed
+
+Types:
+
+- Residential
+- Commercial
+- Land
+- Mixed Use
+- Other
+
+---
+
+# 19. Project Fields
+
+```text
+Project Name
+Featured Image
+Gallery
+Location
+Project Type
+Status
+Developer
+Overview
+Start Date
+Completion Date
+Project Progress
+Features
+Brochure
+Map
+Related Properties
+```
+
+---
+
+# 20. Projects Archive
+
+Sections:
+
+Hero
+
+Filters:
+
+- All
+- Ongoing
+- Upcoming
+- Completed
+
+Project Grid
+
+CTA
+
+Footer
+
+---
+
+# 21. Single Project
+
+Hero
+
+Gallery
+
+Project Overview
+
+Location
+
+Status
+
+Features
+
+Project Progress
+
+Related Properties
+
+Brochure
+
+Inquiry CTA
+
+---
+
+# 22. TRAVEL & TOURISM
+
+Important:
+
+**Single landing page only.**
+
+কোনো Air Ticket subpage, Hotel page বা Package archive এখন থাকবে না।
+
+Sections:
+
+1. Hero
+2. Travel Overview
+3. Trust Features
+4. Travel Services
+5. Why Choose RIVROSS Travel
+6. Inquiry CTA
+7. Travel Inquiry Form
+8. Footer
+
+## Services
+
+- Air Ticketing
+- Hotel Booking
+- Tour Packages
+- Hajj & Umrah
+- Corporate Travel
+
+Each card শুধু information provide করবে।
+
+No separate page required।
+
+---
+
+# 23. Travel Inquiry Form
+
+Fields:
+
+```text
+Full Name
+Phone
+Email
+Travel Type
+Destination
+Preferred Date
+Number of Travelers
+Message
+```
+
+Button:
+
+**Send Inquiry**
+
+---
+
+# 24. TEA BUSINESS
+
+Important:
+
+**Single landing page only.**
+
+Tea Product catalogue এবং single tea product page v1 থেকে বাদ।
+
+Sections:
+
+1. Hero
+2. Business Overview
+3. Trust Features
+4. Tea Solutions
+5. Why Choose RIVROSS Tea
+6. Supply / Distribution Information
+7. Business CTA
+8. Tea Inquiry Form
+9. Footer
+
+## Tea Solutions
+
+- Tea Sourcing
+- Wholesale Supply
+- Blending & Packing
+- Distribution
+- Corporate Supply
+
+---
+
+# 25. Tea Inquiry Form
+
+Fields:
+
+```text
+Full Name
+Company Name
+Phone
+Email
+Requirement Type
+Estimated Quantity
+Message
+```
+
+CTA:
+
+**Submit Business Inquiry**
+
+---
+
+# 26. SERVICES PAGE
+
+এই page-এ company-wide services থাকবে।
+
+Three sections:
+
+### Real Estate
+
+Property Sales  
+Development  
+Project Marketing  
+Investment Opportunities
+
+### Travel
+
+Air Ticketing  
+Hotel Booking  
+Packages  
+Hajj & Umrah  
+Corporate Travel
+
+### Tea
+
+Wholesale  
+Distribution  
+Corporate Supply
+
+প্রতিটি business CTA relevant landing page-এ যাবে।
+
+---
+
+# 27. MANAGEMENT
+
+Create CPT:
+
+```text
+leadership
+```
+
+Fields:
+
+```text
+Name
+Photo
+Designation
+Department
+Professional Background
+Experience
+Expertise
+Responsibility
+LinkedIn URL
+Display Order
+```
+
+Management page:
+
+Hero
+
+Board / Leadership Grid
+
+Management Team
+
+CTA
+
+---
+
+# 28. Single Leadership Profile
+
+Dynamic template।
+
+Photo  
+Name  
+Designation  
+Background  
+Experience  
+Expertise  
+Responsibility
+
+---
+
+# 29. NEWS & MEDIA
+
+WordPress native Posts ব্যবহার করাই যথেষ্ট।
+
+Categories:
+
+- Company News
+- Real Estate
+- Travel
+- Tea Business
+- Partnership
+- Events
+- CSR
+- Announcements
+
+---
+
+# 30. News Archive
+
+Sections:
+
+Hero
+
+Category filter
+
+Latest News
+
+News Grid
+
+Pagination
+
+Newsletter optional
+
+Footer
+
+---
+
+# 31. Single News Template
+
+Featured Image  
+Title  
+Date  
+Category  
+Content  
+Gallery  
+Related News  
+Share buttons
+
+---
+
+# 32. EVENTS
+
+Initially WordPress Posts category দিয়েই করা যাবে:
+
+```text
+Events
+```
+
+Dedicated Event CPT তখনই করব যদি:
+
+- Registration system লাগে
+- Event date filtering লাগে
+- অনেক event থাকে
+
+---
+
+# 33. MEDIA GALLERY
+
+Simple Elementor gallery.
+
+Categories:
+
+- Corporate Events
+- Meetings
+- Real Estate
+- Travel
+- Tea
+- CSR
+
+Heavy gallery plugin avoid করব unless necessary।
+
+---
+
+# 34. CAREERS
+
+v1-এ static Elementor page যথেষ্ট।
+
+Sections:
+
+Hero  
+Why Work With RIVROSS  
+Current Vacancies  
+Hiring Process  
+Culture  
+CTA
+
+Vacancy না থাকলে:
+
+**No current vacancies.**
+
+Future-এ job CPT করা যাবে।
+
+---
+
+# 35. BUSINESS INQUIRY
+
+এটা important conversion page।
+
+Interest selection:
+
+```text
+Real Estate
+Travel & Tourism
+Tea Business
+Partnership
+Investment
+Other
+```
+
+Form fields:
+
+Name  
+Company  
+Email  
+Phone  
+Country  
+Business Area  
+Subject  
+Message
+
+---
+
+# 36. CONTACT PAGE
+
+Sections:
+
+Hero
+
+Contact Information
+
+Contact Form
+
+Google Map
+
+Business Hours
+
+FAQ Preview
+
+Business CTA
+
+Footer
+
+---
+
+# 37. FAQ
+
+Elementor Accordion.
+
+Categories:
+
+General  
+Real Estate  
+Travel  
+Tea  
+Partnership
+
+---
+
+# 38. CORPORATE PROFILE
+
+Static page.
+
+Sections:
+
+Company Overview  
+Vision  
+Mission  
+Business Verticals  
+Management  
+Services  
+Corporate Information
+
+CTA:
+
+**Download Corporate Profile PDF**
+
+---
+
+# 39. Forms Architecture
+
+Use separate forms:
+
+```text
+General Contact
+Business Inquiry
+Property Inquiry
+Travel Inquiry
+Tea Inquiry
+Career Application
+```
+
+Important:
+
+Form submissions যেন correct email-এ যায়।
+
+Example:
+
+```text
+Property Inquiry
+Subject:
+New Property Inquiry – [Property Name]
+```
+
+---
+
+# 40. Email Delivery
+
+Install:
+
+**WP Mail SMTP**
+
+Company email recommended:
+
+```text
+info@rivross.com
+inquiry@rivross.com
+property@rivross.com
+travel@rivross.com
+```
+
+Final domain অনুযায়ী addresses adjust হবে।
+
+---
+
+# 41. Elementor Theme Builder
+
+Create these templates:
+
+```text
+Header
+
+Footer
+
+Single Property
+Property Archive
+
+Single Project
+Project Archive
+
+Single Leadership
+
+Single News
+News Archive
+
+Search Results
+
+404
+```
+
+---
+
+# 42. Image Strategy
+
+Mockup-এর AI images directly final site-এ blindly use করব না।
+
+Final content:
+
+- Real project photos
+- Real office photos
+- Real leadership photos
+- Licensed travel images
+- Real tea/business images
+
+Use:
+
+```text
+WebP / AVIF
+```
+
+Avoid oversized PNG/JPG।
+
+Recommended width:
+
+Hero:
+
+```text
+1920px
+```
+
+Cards:
+
+```text
+800–1200px source
+```
+
+---
+
+# 43. Performance Rules
+
+Elementor website heavy হয়ে যাওয়ার major reason avoid করতে হবে।
+
+### Do
+
+- Container-based Elementor layout
+- WebP/AVIF
+- Lazy loading
+- CDN
+- Cache
+- Optimized fonts
+- Limited animations
+- Minimal plugins
+
+### Don't
+
+- 10 Elementor addons
+- Huge videos everywhere
+- 5MB images
+- Multiple sliders
+- unnecessary motion effects
+
+---
+
+# 44. Responsive Development
+
+প্রতিটি page তিনটা size-এ test:
+
+### Desktop
+
+1440 / 1920
+
+### Tablet
+
+768–1024
+
+### Mobile
+
+360–430
+
+Mobile design শুধু desktop stack করে দিলেই হবে না।
+
+Check:
+
+- Typography
+- Button widths
+- Cards
+- Menu
+- Forms
+- Spacing
+- Image crop
+- Tables
+- Property details
+
+---
+
+# 45. SEO Setup
+
+Rank Math।
+
+Every page:
+
+```text
+SEO Title
+Meta Description
+Canonical
+OpenGraph Image
+Schema
+```
+
+Properties:
+
+RealEstateListing-related structured data available থাকলে properly implement।
+
+News:
+
+Article schema।
+
+Company:
+
+Organization schema।
+
+---
+
+# 46. Analytics
+
+Before launch:
+
+Google Analytics 4
+
+Google Search Console
+
+Form conversion tracking
+
+Important events:
+
+```text
+contact_submit
+business_inquiry_submit
+property_inquiry
+travel_inquiry
+tea_inquiry
+phone_click
+email_click
+whatsapp_click
+```
+
+---
+
+# 47. Security
+
+Minimum:
+
+SSL  
+Strong admin password  
+2FA if possible  
+Limited admin accounts  
+Regular backups  
+Security plugin if needed  
+Disable unnecessary plugins
+
+---
+
+# 48. Backup Strategy
+
+At least:
+
+Daily database backup
+
+Weekly full backup
+
+Off-server backup recommended।
+
+Before major changes:
+
+Manual backup।
+
+---
+
+# 49. Staging
+
+Development live domain-এ করব না।
+
+Recommended structure:
+
+```text
+staging.rivross...
+```
+
+or hosting staging environment।
+
+Process:
+
+Staging → QA → Backup → Push Live
+
+---
+
+# 50. Final Build Order
+
+## PHASE 1 — Setup
+
+1. Hosting
+2. Domain
+3. SSL
+4. WordPress
+5. Staging
+6. Theme
+7. Plugins
+
+---
+
+## PHASE 2 — Global Design
+
+8. Global Colors
+9. Global Fonts
+10. Buttons
+11. Container Widths
+12. Spacing
+13. Header
+14. Footer
+
+---
+
+## PHASE 3 — Dynamic Architecture
+
+15. Property CPT
+16. Property ACF
+17. Project CPT
+18. Project ACF
+19. Leadership CPT
+20. Leadership ACF
+
+---
+
+## PHASE 4 — Dynamic Templates
+
+21. Property Archive
+22. Single Property
+23. Project Archive
+24. Single Project
+25. Leadership Template
+26. News Templates
+
+---
+
+## PHASE 5 — Core Pages
+
+27. Home
+28. About
+29. Our Companies
+30. Real Estate
+31. Services
+32. Projects
+33. Management
+
+---
+
+## PHASE 6 — Landing Pages
+
+34. Travel & Tourism
+35. Tea Business
+
+---
+
+## PHASE 7 — Supporting Pages
+
+36. News & Media
+37. Careers
+38. FAQ
+39. Corporate Profile
+
+---
+
+## PHASE 8 — Conversion Pages
+
+40. Business Inquiry
+41. Contact
+42. Property Inquiry
+
+---
+
+## PHASE 9 — Legal
+
+43. Privacy Policy
+44. Terms & Conditions
+45. 404
+46. Search Results
+
+---
+
+## PHASE 10 — Final Integration
+
+47. SMTP
+48. Forms
+49. Analytics
+50. Search Console
+51. SEO
+52. Cache
+53. CDN
+54. Security
+55. Backup
+
+---
+
+## PHASE 11 — QA
+
+56. Desktop
+57. Tablet
+58. Mobile
+59. Forms
+60. Email
+61. Buttons
+62. Links
+63. Dynamic pages
+64. Search
+65. Performance
+66. SEO
+67. Accessibility basics
+
+---
+
+# 51. What We Should Build First
+
+Development এখন এই exact order থেকে শুরু করব:
+
+```text
+STEP 1
+WordPress Setup
+
+↓
+
+STEP 2
+Hello Elementor + Elementor Pro
+
+↓
+
+STEP 3
+Global Colors & Typography
+
+↓
+
+STEP 4
+Header
+
+↓
+
+STEP 5
+Footer
+
+↓
+
+STEP 6
+HOME PAGE
+
+↓
+
+STEP 7
+Dynamic Real Estate System
+```
+
+**Home Page দিয়ে সরাসরি শুরু করার আগেও Global Design + Header/Footer complete করা উচিত।**
+
+---
+
+# 52. Final Architecture Summary
+
+```text
+RIVROSS CORPORATE WEBSITE
+
+Corporate
+├── Home
+├── About
+├── Our Companies
+├── Services
+├── Management
+├── News
+├── Careers
+└── Contact
+
+Real Estate
+├── Main Landing
+├── Properties
+├── Single Property
+├── Projects
+├── Single Project
+├── Investment
+└── Inquiry
+
+Travel
+└── One Landing Page
+
+Tea
+└── One Landing Page
+
+Conversion
+├── Business Inquiry
+├── Contact
+├── Property Inquiry
+├── Travel Inquiry
+└── Tea Inquiry
+
+Legal
+├── Terms
+└── Privacy
+```
+
+# Final Development Principle
+
+RIVROSS website-টা আমরা **mockup-to-Elementor copy project** হিসেবে build করব না।
+
+Mockup ব্যবহার করব:
+
+**Visual Reference**
+
+WordPress ব্যবহার করব:
+
+**Content Management**
+
+ACF/CPT ব্যবহার করব:
+
+**Structured Dynamic Data**
+
+Elementor Pro ব্যবহার করব:
+
+**Design System + Templates**
+
+এর ফলে website launch-এর পর admin সহজেই Property, Project, Leadership এবং News update করতে পারবে, কিন্তু design ভেঙে যাওয়ার risk থাকবে না।
+
+এটাই RIVROSS website-এর **final development architecture** হিসেবে ধরে development শুরু করা যাবে।
