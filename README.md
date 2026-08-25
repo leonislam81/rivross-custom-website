@@ -16,8 +16,10 @@ Then open `http://localhost:8080`.
 
 - `index.html` — Home page
 - `assets/css/styles.css` — design tokens, layout, responsive rules, components
-- `assets/js/app.js` — navigation, mobile menu, and data-driven cards
-- `data/` — content data for future page/CMS integration
+- `assets/js/app.js` — home page data loading, navigation, mobile menu, and cards
+- `assets/js/pages.js` — interior-page rendering, detail routes, and client-side search/filtering
+- `assets/js/data.js` — shared JSON loader
+- `data/content.json` — editable dynamic content for properties, projects, news, events, jobs, team, services, and businesses
 - `pages/` — additional pages will be added here
 - `reference/mockups/` — supplied visual references, excluded from deployment
 - `docs/` — project architecture and blueprint reference
@@ -30,3 +32,9 @@ Then open `http://localhost:8080`.
 - CSS Grid for repeatable card layouts
 - Flexbox for navigation, CTA actions, and row alignment
 - Mobile-first responsive breakpoints at 1024px and 720px
+
+## Dynamic content and search
+
+All sample records are stored in `data/content.json`. Add or edit records there and the Home, Real Estate, Properties, Projects, News, Events, Careers, Leadership, Search, and detail pages will use the updated content automatically.
+
+The static frontend provides working client-side search/filtering for properties, projects, news, events, and global site search. It does not require a database or backend. Forms such as contact, inquiry, and newsletter remain presentation-ready demo forms until an email/form endpoint is connected.

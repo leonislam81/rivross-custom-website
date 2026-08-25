@@ -451,3 +451,14 @@ h2 { margin-bottom: 15px; color: var(--ink); font: 600 36px/1.05 var(--display);
 .check-list li { position: relative; padding-left: 24px; }
 .check-list li::before { position: absolute; left: 0; top: .45em; width: 11px; height: 11px; content: "✓"; display: grid; place-items: center; color: var(--gold); border: 1px solid var(--gold); border-radius: 50%; font-size: 8px; line-height: 1; }
 .page-section.dark .check-list { color: rgba(255,255,255,.82); }
+
+/* Dynamic content controls ------------------------------------------------ */
+.search-summary { min-height: 22px; margin: -12px 0 18px; color: var(--muted); font-size: 12px; font-weight: 600; }
+.no-results { margin-top: 16px; }
+.search-group { margin-top: 34px; }
+.search-group:first-child { margin-top: 0; }
+.search-group > h2 { margin-bottom: 16px; font: 700 20px/1.2 var(--interface); text-transform: uppercase; }
+.progress-track { height: 5px; margin-top: 14px; overflow: hidden; background: var(--line); }
+.progress-track span { display: block; height: 100%; background: var(--gold); }
+.event-image { min-height: 145px !important; }
+.catalog-toolbar button.button { cursor: pointer; }
