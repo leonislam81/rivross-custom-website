@@ -69,6 +69,7 @@ button { font: inherit; }
 .slider-dots span.is-active { background: var(--gold-bright); }
 .hero-shape { position: absolute; z-index: 2; top: 0; bottom: 0; left: 42%; width: 110px; background: var(--gold); clip-path: polygon(58% 0,100% 0,40% 50%,100% 100%,58% 100%,0 50%); opacity: .95; }
 .hero-visual { position: relative; overflow: hidden; min-height: 482px; background: linear-gradient(135deg, #122d4d 0%, #28516a 45%, #e0a445 120%); }
+.hero-visual img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; }
 .hero-visual::before { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, var(--deep-navy) 0%, transparent 35%), linear-gradient(180deg, rgba(3,21,45,.08), rgba(3,21,45,.72)); }
 .skyline { position: absolute; right: 4%; bottom: 20%; width: 85%; background: repeating-linear-gradient(90deg, rgba(8,29,54,.9) 0 7%, transparent 7% 10%); }
 .skyline-back { height: 55%; opacity: .75; clip-path: polygon(0 50%, 8% 45%, 13% 12%, 21% 40%, 29% 0, 36% 45%, 45% 21%, 56% 46%, 64% 7%, 72% 47%, 83% 25%, 93% 49%, 100% 36%, 100% 100%, 0 100%); }
@@ -100,11 +101,11 @@ h2 { margin-bottom: 15px; color: var(--ink); font: 600 36px/1.05 var(--display);
 .section-heading.centered .eyebrow::before, .section-heading.centered .eyebrow::after { display: inline-block; width: 42px; height: 1px; margin: 0 12px 4px; content: ""; background: var(--gold); }
 .section-heading h2 { margin: 8px 0 0; }
 .business-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
-.business-card { position: relative; min-height: 260px; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; padding: 26px; overflow: hidden; color: var(--paper); border-radius: var(--radius); text-align: center; background-color: var(--navy); isolation: isolate; }
-.business-card::before { position: absolute; z-index: -2; inset: 0; content: ""; opacity: .75; background: radial-gradient(circle at 75% 20%, rgba(224,170,66,.38), transparent 32%), linear-gradient(145deg, #294e71, #051d3d); }
+.business-card { position: relative; min-height: 260px; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; padding: 26px; overflow: hidden; color: var(--paper); border-radius: var(--radius); text-align: center; background-color: var(--navy); background-position: center; background-size: cover; isolation: isolate; }
+.business-card::before { position: absolute; z-index: -2; inset: 0; content: ""; opacity: .82; background: radial-gradient(circle at 75% 20%, rgba(224,170,66,.18), transparent 32%), linear-gradient(145deg, rgba(41,78,113,.26), rgba(5,29,61,.82)); }
 .business-card::after { position: absolute; z-index: -1; inset: 0; content: ""; background: linear-gradient(180deg, transparent 20%, rgba(3,21,45,.92) 100%); }
-.business-travel::before { background: radial-gradient(circle at 70% 18%, rgba(224,170,66,.35), transparent 35%), linear-gradient(145deg, #416178, #14324d); }
-.business-tea::before { background: radial-gradient(circle at 25% 12%, rgba(87,154,85,.45), transparent 34%), linear-gradient(145deg, #567045, #0b2a1b); }
+.business-travel::before { background: radial-gradient(circle at 70% 18%, rgba(224,170,66,.2), transparent 35%), linear-gradient(145deg, rgba(65,97,120,.18), rgba(20,50,77,.82)); }
+.business-tea::before { background: radial-gradient(circle at 25% 12%, rgba(87,154,85,.25), transparent 34%), linear-gradient(145deg, rgba(86,112,69,.18), rgba(11,42,27,.82)); }
 .card-icon { position: relative; display: grid; place-items: center; width: 58px; height: 58px; margin-bottom: auto; color: var(--gold-bright); border: 1px solid var(--gold); border-radius: 50%; font: 30px/1 var(--display); background: rgba(3,21,45,.8); }
 .business-card h3 { margin: 0 0 6px; color: var(--paper); font: 700 24px/1.1 var(--display); text-transform: uppercase; }
 .business-card p { max-width: 300px; margin: 0 0 16px; color: rgba(255,255,255,.9); font-size: 12px; line-height: 1.45; }
@@ -126,6 +127,7 @@ h2 { margin-bottom: 15px; color: var(--ink); font: 600 36px/1.05 var(--display);
 .property-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
 .property-card, .project-card, .leadership-card { overflow: hidden; border: 1px solid var(--line); background: var(--paper); }
 .image-placeholder { position: relative; min-height: 125px; display: grid; place-items: center; overflow: hidden; color: rgba(255,255,255,.88); background: linear-gradient(135deg, #79a6d2, #163b64); }
+.image-placeholder img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; }
 .image-placeholder::before { position: absolute; inset: 0; content: ""; opacity: .35; background: repeating-linear-gradient(120deg, transparent 0 25px, rgba(255,255,255,.16) 26px 27px); }
 .image-placeholder span { position: relative; z-index: 1; padding: 5px 7px; border: 1px solid rgba(255,255,255,.5); font-size: 9px; text-transform: uppercase; }
 .property-card .card-body, .project-card .card-body { padding: 12px; }
@@ -274,7 +276,7 @@ h2 { margin-bottom: 15px; color: var(--ink); font: 600 36px/1.05 var(--display);
 
 /* Interior-page system ---------------------------------------------------- */
 .inner-hero { position: relative; min-height: 340px; display: grid; align-items: center; overflow: hidden; color: var(--paper); background: var(--deep-navy); isolation: isolate; }
-.inner-hero::before { position: absolute; z-index: -2; inset: 0 0 0 40%; content: ""; background: radial-gradient(circle at 68% 30%, rgba(224,170,66,.28), transparent 30%), linear-gradient(135deg, #173d64 0%, #0b294a 50%, #061b36 100%); }
+.inner-hero::before { position: absolute; z-index: -2; inset: 0; content: ""; background-image: radial-gradient(circle at 68% 30%, rgba(224,170,66,.22), transparent 30%), linear-gradient(90deg, rgba(3,21,45,.98) 0%, rgba(3,21,45,.82) 33%, rgba(3,21,45,.18) 76%, rgba(3,21,45,.52) 100%), var(--hero-image, none); background-position: center; background-size: cover; }
 .inner-hero::after { position: absolute; z-index: -1; inset: 0; content: ""; background: linear-gradient(90deg, var(--deep-navy) 0%, rgba(3,21,45,.94) 30%, rgba(3,21,45,.18) 72%, rgba(3,21,45,.7) 100%); }
 .inner-hero .site-container { width: min(100% - 64px, var(--frame)); }
 .inner-hero-copy { max-width: 530px; padding: 66px 0 62px; }
@@ -296,6 +298,7 @@ h2 { margin-bottom: 15px; color: var(--ink); font: 600 36px/1.05 var(--display);
 .visual-panel { min-height: 330px; display: grid; place-items: center; padding: 28px; color: var(--gold-bright); border: 1px solid rgba(201,150,47,.45); background: radial-gradient(circle at 65% 22%, rgba(224,170,66,.38), transparent 26%), linear-gradient(135deg, #294f74, #061f3c 70%); }
 .visual-panel.tall { min-height: 430px; }
 .visual-panel span { padding: 12px 16px; border: 1px solid rgba(255,255,255,.4); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; }
+.visual-panel img { object-position: center; }
 .value-grid, .stat-grid, .service-directory, .team-grid, .article-grid, .job-grid, .event-grid { display: grid; gap: 16px; }
 .value-grid { grid-template-columns: repeat(3, 1fr); }
 .value-card, .stat-card, .directory-card, .team-card, .article-card, .job-card, .event-card { padding: 24px; border: 1px solid var(--line); background: var(--paper); }
@@ -328,9 +331,12 @@ h2 { margin-bottom: 15px; color: var(--ink); font: 600 36px/1.05 var(--display);
 .catalog-card .card-meta { display: flex; flex-wrap: wrap; gap: 10px; margin: 12px 0; color: var(--muted); font-size: 10px; }
 .directory-grid { grid-template-columns: repeat(3, 1fr); }
 .directory-card { min-height: 205px; }
+.directory-card .service-image { min-height: 138px; margin: -24px -24px 20px; }
+.directory-card .service-image img { object-position: center; }
 .team-grid { grid-template-columns: repeat(4, 1fr); }
 .team-card { padding: 0; overflow: hidden; text-align: center; }
 .team-card .image-placeholder { min-height: 245px; background: linear-gradient(135deg, #e1e4e7, #8493a4); }
+.team-card .image-placeholder img { object-position: center top; }
 .team-card .card-body { padding: 15px 12px 18px; }
 .team-card h3 { font-family: var(--interface); font-size: 14px; }
 .team-card .role { display: block; margin-bottom: 10px; color: var(--gold); font-size: 10px; font-weight: 700; text-transform: uppercase; }

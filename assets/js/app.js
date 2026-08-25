@@ -25,31 +25,31 @@ const FALLBACK_HOME_DATA = {
 const escapeHtml = value => String(value ?? "").replace(/[&<>'"]/g, character => ({
   "&": "&amp;", "<": "&lt;", ">": "&gt;", "'": "&#39;", "\"": "&quot;"
 }[character]));
-const placeholder = (label, modifier = "") => `<div class="image-placeholder ${modifier}"><span>${escapeHtml(label)}</span></div>`;
+const placeholder = (label, modifier = "", image = "") => `<div class="image-placeholder ${modifier}">${image ? `<img src="${escapeHtml(image)}" alt="${escapeHtml(label)}" loading="lazy">` : `<span>${escapeHtml(label)}</span>`}</div>`;
 const content = () => window.RIVROSS_DATA_PROMISE || Promise.resolve(FALLBACK_HOME_DATA);
 
 function renderHomeProperties(properties) {
   const target = document.querySelector("[data-properties]");
   if (!target) return;
-  target.innerHTML = properties.slice(0, 3).map(item => `<article class="property-card"><a href="pages/property-details.html?id=${encodeURIComponent(item.id)}">${placeholder(item.imageLabel || "Property image")}</a><div class="card-body"><span class="tag">${escapeHtml(item.type)}</span><h3>${escapeHtml(item.name)}</h3><p>⌖ ${escapeHtml(item.location)}</p><span class="price">${escapeHtml(item.price)}</span></div></article>`).join("");
+  target.innerHTML = properties.slice(0, 3).map(item => `<article class="property-card"><a href="pages/property-details.html?id=${encodeURIComponent(item.id)}">${placeholder(item.imageLabel || "Property image", "", item.image)}</a><div class="card-body"><span class="tag">${escapeHtml(item.type)}</span><h3>${escapeHtml(item.name)}</h3><p>⌖ ${escapeHtml(item.location)}</p><span class="price">${escapeHtml(item.price)}</span></div></article>`).join("");
 }
 
 function renderHomeProjects(projects) {
   const target = document.querySelector("[data-projects]");
   if (!target) return;
-  target.innerHTML = projects.slice(0, 3).map(item => `<article class="project-card"><a href="pages/projects.html#${encodeURIComponent(item.id)}">${placeholder(item.imageLabel || item.status, "project-image")}</a><div class="card-body"><span class="tag">${escapeHtml(item.status)}</span><h3>${escapeHtml(item.name)}</h3><p>⌖ ${escapeHtml(item.location)}</p><p>${escapeHtml(item.detail)}</p></div></article>`).join("");
+  target.innerHTML = projects.slice(0, 3).map(item => `<article class="project-card"><a href="pages/projects.html#${encodeURIComponent(item.id)}">${placeholder(item.imageLabel || item.status, "project-image", item.image)}</a><div class="card-body"><span class="tag">${escapeHtml(item.status)}</span><h3>${escapeHtml(item.name)}</h3><p>⌖ ${escapeHtml(item.location)}</p><p>${escapeHtml(item.detail)}</p></div></article>`).join("");
 }
 
 function renderHomeNews(news) {
   const target = document.querySelector("[data-news]");
   if (!target) return;
-  target.innerHTML = news.slice(0, 3).map(item => `<article class="news-item"><a href="pages/news-details.html?id=${encodeURIComponent(item.id)}">${placeholder(item.imageLabel || item.category)}</a><div><p>${escapeHtml(item.date)}</p><h3>${escapeHtml(item.title)}</h3><a class="text-link" href="pages/news-details.html?id=${encodeURIComponent(item.id)}">Read More <span aria-hidden="true">→</span></a></div></article>`).join("");
+  target.innerHTML = news.slice(0, 3).map(item => `<article class="news-item"><a href="pages/news-details.html?id=${encodeURIComponent(item.id)}">${placeholder(item.imageLabel || item.category, "", item.image)}</a><div><p>${escapeHtml(item.date)}</p><h3>${escapeHtml(item.title)}</h3><a class="text-link" href="pages/news-details.html?id=${encodeURIComponent(item.id)}">Read More <span aria-hidden="true">→</span></a></div></article>`).join("");
 }
 
 function renderHomeLeadership(team) {
   const target = document.querySelector("[data-leadership]");
   if (!target) return;
-  target.innerHTML = team.slice(0, 4).map(item => `<article class="leadership-card"><a href="pages/leadership.html#${encodeURIComponent(item.id)}">${placeholder("Portrait")}</a><div class="card-body"><h3>${escapeHtml(item.name)}</h3><p>${escapeHtml(item.role)}</p></div></article>`).join("");
+  target.innerHTML = team.slice(0, 4).map(item => `<article class="leadership-card"><a href="pages/leadership.html#${encodeURIComponent(item.id)}">${placeholder(item.name || "Portrait", "", item.image)}</a><div class="card-body"><h3>${escapeHtml(item.name)}</h3><p>${escapeHtml(item.role)}</p></div></article>`).join("");
 }
 
 function setupNavigation() {
